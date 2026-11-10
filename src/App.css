@@ -1,0 +1,152 @@
+
+/* Configuración general */
+#root {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Fondo del Mundo Digital */
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 10, 35, 0.30),
+            rgba(0, 10, 35, 0.45)
+        ),
+        url('/imagenes/fondo-digital.png');
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+/* Contenedor principal */
+.pagina {
+    min-height: 100vh;
+    padding: 20px 5%;
+}
+
+/* Encabezado */
+.encabezado {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+/* Logotipo Digimon */
+.logo-digimon {
+    display: inline-block;
+    color: #ffb000;
+    font-size: 48px;
+    font-weight: 900;
+    font-style: italic;
+    letter-spacing: 2px;
+    -webkit-text-stroke: 2px #102c75;
+    text-shadow:
+        3px 3px 0 #07152e,
+        0 0 15px #00bfff;
+}
+
+.logo-digimon span {
+    display: block;
+    color: white;
+    font-size: 13px;
+    letter-spacing: 3px;
+    -webkit-text-stroke: 0;
+}
+
+/* Título principal */
+.encabezado h1 {
+    display: inline-block;
+    padding: 10px 35px;
+    color: white;
+    font-size: 38px;
+    font-style: italic;
+    text-shadow: 0 0 15px #00cfff;
+    border: 2px solid #00cfff;
+    box-shadow: 0 0 18px #00cfff;
+    background: rgba(0, 30, 90, 0.65);
+    border-radius: 12px;
+}
+
+/* Cuadrícula responsive de Digimon */
+.contenedor {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+/* Tarjetas */
+.tarjeta {
+    background: linear-gradient(145deg, #ffffff, #dceaff);
+    border: 2px solid #4c8cff;
+    border-radius: 20px;
+    padding: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+/* Efecto al pasar el mouse */
+.tarjeta:hover {
+    transform: scale(1.07);
+    box-shadow: 0 0 25px #00bfff;
+    border-color: #00d9ff;
+}
+
+/* Imágenes de Digimon */
+.tarjeta img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.tarjeta:hover img {
+    transform: scale(1.08);
+}
+
+/* Nombre del Digimon */
+.tarjeta h3 {
+    color: #183b83;
+    font-size: 21px;
+    margin: 10px 0;
+}
+
+/* Nivel del Digimon */
+.tarjeta p {
+    color: #333333;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Adaptación para celulares */
+@media (max-width: 600px) {
+    .pagina {
+        padding: 15px;
+    }
+
+    .logo-digimon {
+        font-size: 34px;
+    }
+
+    .encabezado h1 {
+        font-size: 25px;
+        padding: 10px 15px;
+    }
+
+    .contenedor {
+        grid-template-columns: 1fr;
+    }
+
+    .tarjeta:hover {
+        transform: scale(1.02);
+    }
+
+    body {
+        background-attachment: scroll;
+    }
+}
